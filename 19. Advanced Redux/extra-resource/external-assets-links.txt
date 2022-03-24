@@ -1,0 +1,6 @@
+
+Suboptimal-Code-Snapshot-Example-
+https://github.com/academind/react-complete-guide-code/tree/19-advanced-redux/code/zz-suboptimal-example-code
+
+Notification-Component-Files
+https://github.com/academind/react-complete-guide-code/tree/19-advanced-redux/extra-files

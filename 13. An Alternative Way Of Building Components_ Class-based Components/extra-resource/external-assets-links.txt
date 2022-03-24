@@ -1,0 +1,15 @@
+
+Understanding-this-in-JavaScript-Tutorial-
+https://academind.com/tutorials/this-keyword-function-references/
+
+UserFinder.js-Code
+https://github.com/academind/react-complete-guide-code/blob/13-class-based-cmp/extra-files/UserFinder.js
+
+UserFinder.module.css-Code
+https://github.com/academind/react-complete-guide-code/blob/13-class-based-cmp/extra-files/UserFinder.module.css
+
+App.js-Code
+https://github.com/academind/react-complete-guide-code/blob/13-class-based-cmp/extra-files/App.js
+
+users-context.js-Code
+https://github.com/academind/react-complete-guide-code/blob/13-class-based-cmp/extra-files/users-context.js

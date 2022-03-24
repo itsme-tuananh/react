@@ -1,0 +1,6 @@
+
+Understanding-Closures
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+
+Reference-vs-Primitive-Types
+https://academind.com/learn/javascript/reference-vs-primitive-values/

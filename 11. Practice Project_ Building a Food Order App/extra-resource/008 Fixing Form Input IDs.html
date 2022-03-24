@@ -1,0 +1,28 @@
+<p>With the current implementation of <code>MealItemForm</code>, every <code>MealItem</code> <code>&lt;Input /&gt;</code>&nbsp;receives the same <code>id</code>, as I&nbsp;do the following in the code I&nbsp;show in the previous lecture:</p><pre class="prettyprint linenums">&lt;Input
+    label='Amount'
+    input={{
+        id: 'amount',
+        type: 'number',
+        min: '1',
+        max: '5',
+        step: '1',
+        defaultValue: '1',
+    }}
+/&gt;</pre><p>This works but it has <strong>two major disadvantages</strong> which are <strong>not immediately obvious</strong> (and hence unfortunately slipped through during the recordings):</p><ol><li><p>Clicking on ANY label will always select the same, first input element - even if that's not the one belonging to the actual MeatItem</p></li><li><p>Screenreaders won't be able to connect labels + inputs correctly (since all labels point at the same input)</p></li></ol><p>Everything shown in the videos works as shown and <strong>fixing this is optional</strong>, but since fixing this is easy, you might want to consider making the below adjustments:</p><p>One possible workaround is to accept an <code>id</code> prop on the MealItemForm component and use that to create a unique id per <code>&lt;Input /&gt;</code>:</p><pre class="prettyprint linenums">&lt;Input
+    label='Amount'
+    input={{
+        id: 'amount_' + props.id, //&nbsp;this changed!
+        type: 'number',
+        min: '1',
+        max: '5',
+        step: '1',
+        defaultValue: '1',
+    }}
+/&gt;</pre><p>We just have to make sure that the <code>id</code> props is passed correctly to <code>&lt;MealItemForm /&gt;</code> when that component is being used (i.e. inside of the <code>MealItem</code> component):</p><pre class="prettyprint linenums">&lt;MealItemForm id={props.id} /&gt;</pre><p>Last but not least, for that to work, we should also pass <code>id</code> as a prop to <code>MealItem</code>, hence inside of the <code>AvailableMeals</code> component, we should create <code>&lt;MealItem /&gt;</code> elements like this:</p><pre class="prettyprint linenums">&lt;MealItem
+    id={meal.id} // this is new!
+    key={meal.id}
+    name={meal.name}
+    description={meal.description}
+    price={meal.price}
+/&gt;
+</pre><p>Again, <strong>this is all 100% optional</strong> when it comes to the general functionality of this demo app - everything works as shown in the videos without these changes as well. But for proper accessibility, you should consider making these adjustments.</p><p>I did also update all the code snapshots to reflect these changes.</p>
